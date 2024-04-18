@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: black;
+  color: black;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+h1 {
+  font-size: 46px;
+  letter-spacing: 1.1px;
+  color: white;
+}
+.seasons-cont {
+  width: 80%;
+  margin: 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.seasons-info {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  height: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 10px 10px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
+  overflow: hidden;
+  text-shadow: 0 0 1px black;
+  z-index: 10;
+}
+.seasons-info > h4 {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 60%;
+  border-radius: 50px;
+  padding: 0 2rem;
+  font-size: 1.2em;
+}
+.seasons-info > p {
+  padding: 2rem;
+  border-radius: 5px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.seasons-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  filter: blur(5px);
+  z-index: -1;
+}
+.container {
+  height: 400px;
+  /* background: red; */
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+}
+.card {
+  width: 80px;
+  border-radius: 2rem;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.3, -0.3, 0, 0.9);
+  box-shadow: 5px 5px 16px rgba(255, 255, 255, 0.3);
+  margin: 0 15px;
+  cursor: pointer;
+}
+.card > .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.card > .row > .index {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+.card > .row > .info {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  transform: translateY(100px);
+  overflow: hidden;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.info > h4 {
+  text-transform: uppercase;
+}
+
+label[for="c1"] {
+  background-position: center bottom;
+  color: white;
+}
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .card {
+  width: 600px;
+}
+input[type="radio"]:checked + .card .info {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+label[for="c1"] {
+  background-image: url("https://source.unsplash.com/RdKtv4gvDJ8");
+}
+label[for="c2"] {
+  background-image: url("https://source.unsplash.com/H6WGJB9sETg");
+  color: white;
+  background-position: center -300px;
+}
+label[for="c3"] {
+  background-image: url("https://source.unsplash.com/dcovteh2ti4");
+  color: white;
+  background-position: center;
+}
+label[for="c4"] {
+  background-image: url("https://source.unsplash.com/KWUyjtSFNc0");
+  color: white;
+  background-position: center;
+}
+@media (max-width: 1600px) {
+  .seasons-cont {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .seasons-cont {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
